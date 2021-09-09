@@ -4,6 +4,8 @@ import UserList from "./components/UserList";
 import {IUser} from "./types/types";
 import {Simulate} from "react-dom/test-utils";
 import axios from "axios";
+import List from "./components/List";
+import UserItem from "./components/UserItem";
 
 
 function App() {
@@ -30,7 +32,7 @@ function App() {
                     Some div element in card component
                 </div>
             </Card>
-            <UserList users={users}/>
+            <List items={users} renderItem={user => <UserItem user={user} key={user.id}/>}/>
         </div>
     );
 }
