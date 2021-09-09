@@ -9,9 +9,7 @@ interface UserListInterface {
 const UserList: FC<UserListInterface> = ({users}) => {
     return (
         <div>
-            {users.map(user =>
-                <UserItem user={user} key={user.id}/>
-            )}
+            
         </div>
     );
 };
