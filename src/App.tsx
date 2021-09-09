@@ -1,11 +1,11 @@
 import React from 'react';
-import Card from "./components/Card";
+import Card, {variantsSet} from "./components/Card";
 
 function App() {
   return (
     <div className="App">
-        <Card width={200} height={100}>
-            <div style={{width: "100", height: "50", backgroundColor: "gray"}}>
+        <Card width={200} height={100} someVariant={variantsSet.primary} onClick={(num) => {console.log("click from Card, num: " + num)}}>
+            <div style={{width: "100px", height: "50px", backgroundColor: "gray"}}>
                 Some div element in card component
             </div>
         </Card>
