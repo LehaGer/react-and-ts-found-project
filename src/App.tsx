@@ -7,6 +7,7 @@ import axios from "axios";
 import List from "./components/List";
 import UserItem from "./components/UserItem";
 import ToDoItem from "./components/ToDoItem";
+import EventsExample from "./components/EventsExample";
 
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
 
     return (
         <div className="App">
+            <EventsExample/>
             <Card width={200} height={100} someVariant={variantsSet.primary} onClick={(num) => {console.log("click from Card, num: " + num)}}>
                 <div style={{width: "100px", height: "50px", backgroundColor: "gray"}}>
                     Some div element in card component
