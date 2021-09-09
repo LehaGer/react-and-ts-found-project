@@ -3,6 +3,7 @@ import Card, {variantsSet} from "./components/Card";
 import UserList from "./components/UserList";
 import {IUser} from "./types/types";
 
+
 function App() {
 
     const users: IUser[] = [
@@ -21,11 +22,10 @@ function App() {
             }
         },
         {
-            id: 1,
+            id: 2,
             name: "Petya",
             username: "PetyaSuper",
             phone: "+98765432",
-            website: "petyasuper.com",
             email: "petya@gmail.com",
             address: {
                 city: "New-York"
