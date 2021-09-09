@@ -27,3 +27,10 @@ export interface IUser {
     website?: string,
     company: ICompany
 }
+
+export interface IToDo {
+    userId?: number,
+    id: number,
+    title: string,
+    completed: boolean
+}
