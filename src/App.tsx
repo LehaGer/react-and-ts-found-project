@@ -1,40 +1,27 @@
-import React from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
 import Card, {variantsSet} from "./components/Card";
 import UserList from "./components/UserList";
 import {IUser} from "./types/types";
+import {Simulate} from "react-dom/test-utils";
+import axios from "axios";
 
 
 function App() {
 
-    const users: IUser[] = [
-        {
-            id: 1,
-            name: "Vasya",
-            username: "VasyaSuper",
-            phone: "+12345678",
-            website: "vasyasuper.com",
-            email: "vasya@gmail.com",
-            address: {
-                city: "New-York"
-            },
-            company: {
-                name: "Google"
-            }
-        },
-        {
-            id: 2,
-            name: "Petya",
-            username: "PetyaSuper",
-            phone: "+98765432",
-            email: "petya@gmail.com",
-            address: {
-                city: "New-York"
-            },
-            company: {
-                name: "Google"
-            }
-        },
-    ];
+    const [users, setUsers] = useState<IUser[]>([]);
+
+    useEffect(() => {
+        fetchUsers();
+    }, []);
+
+    async function fetchUsers ()  {
+        try {
+            const dbResponse = await axios.get<IUser[]>("https://jsonplaceholder.typicode.com/users/");
+            setUsers(dbResponse.data);
+        } catch (e) {
+            alert(e);
+        }
+    }
 
     return (
         <div className="App">
